@@ -1,0 +1,36 @@
+{
+  "name": "v-show-important",
+  "version": "1.0.0",
+  "description": "A Vue 3 directive that enhances v-show by applying CSS !important for reliable element visibility control.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajomuch92/v-show-important.git"
+  },
+  "keywords": [
+    "v-show",
+    "vue",
+    "3",
+    "show",
+    "important",
+    "important",
+    "css",
+    "show"
+  ],
+  "author": "Aarón J. Montes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajomuch92/v-show-important/issues"
+  },
+  "homepage": "https://github.com/ajomuch92/v-show-important#readme",
+  "dependencies": {
+    "typescript": "^5.9.3",
+    "vue": "^3.5.22"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.0"
+  }
+}

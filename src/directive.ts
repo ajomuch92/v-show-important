@@ -1,8 +1,18 @@
 import type { DirectiveBinding } from "vue";
 
+const originalDisplayMap = new WeakMap<HTMLElement, string>();
+
 function setDisplay(el: HTMLElement, value: boolean) {
-  const display = value ? "" : "none";
-  el.style.setProperty("display", display, "important");
+  if (value) {
+    const originalDisplay = originalDisplayMap.get(el);
+    el.style.setProperty("display", originalDisplay ?? "", "important");
+  } else {
+    if (!originalDisplayMap.has(el)) {
+      const currentDisplay = el.style.display || getComputedStyle(el).display;
+      originalDisplayMap.set(el, currentDisplay);
+    }
+    el.style.setProperty("display", "none", "important");
+  }
 }
 
 export const vShowImportant = {
@@ -11,5 +21,8 @@ export const vShowImportant = {
   },
   updated(el: HTMLElement, binding: DirectiveBinding<boolean>) {
     setDisplay(el, binding.value);
+  },
+  unmounted(el: HTMLElement) {
+    originalDisplayMap.delete(el);
   }
 };

@@ -105,4 +105,7 @@ You can safely import and use it in any TypeScript Vue 3 project.
 
 ---
 
+## Collaborate
+Feel free to open issues or pull requests on the [repository](https://github.com/ajomuch92/v-show-important).
+
 **Made with ❤️ for Vue developers**
